@@ -49,6 +49,7 @@ $('document').ready(function(){
     	result="";
     	bar="";
     	foo="";
+        $('input').val("Enter a number");
 
     });
 

@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Calculatrice</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
 	<script>
 	// var displayValue = '0';   
  //    $('#result').text(displayValue);
@@ -45,100 +46,56 @@
 <script src="node_modules/jquery/dist/jquery.js"></script>
 
 <input type="text" value="enter a number"/>
-<h1>Value 1 </h1>
-<button class="key1">0</button> 
-<button class="key1">1</button> 
-<button class="key1">2</button>
-<button class="key1">3 </button> 
-<button class="key1">4</button> 
-<button class="key1">5 </button> 
-<button class="key1">6</button>
-<button class="key1">7</button>
-<button class="key1">8</button>
-<button class="key1">9</button>
 
-<h1>Value 2 </h1>
-<button class="key2">0</button> 
-<button class="key2">1</button> 
-<button class="key2">2</button>
-<button class="key2">3 </button> 
-<button class="key2">4</button> 
-<button class="key2">5 </button> 
-<button class="key2">6</button>
-<button class="key2">7</button>
-<button class="key2">8</button>
-<button class="key2">9</button>
 
-<h1>Value 3</h1>
-<button id="plus">+</button>
-<button id="less">-</button>
-<button id="divid">/</button>
-<button id="multiply">*</button>
+<div id="content1"> 
+	<div class="value1">
+		<h1>Value 1 </h1>
+		<button class="key1">0</button> 
+		<button class="key1">1</button> 
+		<button class="key1">2</button>
+		<button class="key1">3 </button> 
+		<button class="key1">4</button> 
+		<button class="key1">5 </button> 
+		<button class="key1">6</button>
+		<button class="key1">7</button>
+		<button class="key1">8</button>
+		<button class="key1">9</button>
+	</div>
 
+	<div class="value2">
+		<h1>Value 2 </h1>
+		<button class="key2">0</button> 
+		<button class="key2">1</button> 
+		<button class="key2">2</button>
+		<button class="key2">3 </button> 
+		<button class="key2">4</button> 
+		<button class="key2">5 </button> 
+		<button class="key2">6</button>
+		<button class="key2">7</button>
+		<button class="key2">8</button>
+		<button class="key2">9</button>
+	</div>
+</div>
+
+<div class="value3">
+	<h1>Value 3</h1>
+	<button id="plus">+</button>
+	<button id="less">-</button>
+	<button id="divid">/</button>
+	<button id="multiply">*</button>
+</div>
+
+<div class="resultat">
 <h1>Result</h1>
 <button id="result">Submit</button>
+</div>
 
+<div class="reseto">
 <h1>Reset</h1>
 <button id="reset">Reset</button>
+</div>
 
-<script>
-$('document').ready(function(){
-    var foo="";
-    var bar="";
-    var result="";
-
-    $('.key1').click(function() {
-        bar = parseInt($(this).html());
-        console.log(bar);
-        console.log(typeof bar);
-        $('input').val(bar);
-    });
-
-    $('.key2').click(function() {
-        foo = parseInt($(this).html());
-        console.log(foo);
-        console.log(typeof foo);
-        $('input').val(foo);
-    });
-
-   	$('#plus').click(function() {
-        result = bar + foo;
-        console.log(result);
-        console.log(typeof result);
-    });
-        
-    $('#less').click(function() {
-    	result = bar - foo;
-    	console.log(result);
-    	console.log(typeof result);
-    });    
-
-    $('#divid').click(function() {
-    	result = bar / foo;
-    	console.log(result);
-    	console.log(typeof result);
-    });
-
-    $('#multiply').click(function() {
-    	result = bar * foo;
-    	console.log(result);
-    	console.log(typeof result);
-    });
-
-    $('#result').click(function() {
-    	$('input').val(result);
-    });
-
-    $('#reset').click(function() {
-    	result="";
-    	bar="";
-    	foo="";
-
-    });
-
-
-});
-</script>
 
 
 <script type="text/javascript" src="js/app.js"></script>

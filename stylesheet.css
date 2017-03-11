@@ -1,0 +1,27 @@
+#content {
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+	margin: auto;
+}
+
+.value1 {
+	display:flex;
+	margin: auto;
+}
+
+.value2{
+	display:flex;
+}
+
+.value3{
+	display:flex;
+}
+
+.resultat {
+	display:flex;
+}
+
+.reseto {
+	display:flex;
+}
