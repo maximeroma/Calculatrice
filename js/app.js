@@ -1,57 +1,74 @@
 $('document').ready(function(){
-    var foo="";
-    var bar="";
-    var result="";
+    var bar="0";
+    var foo="0";
+    var result="0";
+
+    // entrer la variable 1
 
     $('.key1').click(function() {
-        bar = parseInt($(this).html());
+        bar = bar + $(this).html();
         console.log(bar);
         console.log(typeof bar);
         $('input').val(bar);
     });
 
+    // entrer la variable 2
+
     $('.key2').click(function() {
-        foo = parseInt($(this).html());
+        foo = foo + $(this).html();
         console.log(foo);
         console.log(typeof foo);
         $('input').val(foo);
     });
 
+    // faire une addition
+
    	$('#plus').click(function() {
-        result = bar + foo;
+        result = parseInt(bar) + parseInt(foo);
         console.log(result);
         console.log(typeof result);
     });
         
+    // faire une soustraction
+
     $('#less').click(function() {
-    	result = bar - foo;
+    	result = parseInt(bar) - parseInt(foo);
     	console.log(result);
     	console.log(typeof result);
-    });    
+    });   
+
+    // faire une division 
 
     $('#divid').click(function() {
-    	result = bar / foo;
+    	result = parseInt(bar) / parseInt(foo);
     	console.log(result);
     	console.log(typeof result);
     });
 
+    // faire une multiplication
+
     $('#multiply').click(function() {
-    	result = bar * foo;
+    	result = parseInt(bar) * parseInt(foo);
     	console.log(result);
     	console.log(typeof result);
     });
+
+    // afficher le résultat
 
     $('#result').click(function() {
     	$('input').val(result);
     });
 
+    // réinitialiser la calculette
+
     $('#reset').click(function() {
     	result="";
     	bar="";
     	foo="";
-        $('input').val("Enter a number");
+        $('input').text ="Enter a number";
 
     });
+
 
 
 });
