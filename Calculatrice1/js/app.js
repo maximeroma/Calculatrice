@@ -1,7 +1,8 @@
-
+$('document').ready(function(){
 
 	var bar ="0";
 	var foo=[];
+	var result="0";
 
 	//entrer la variable
 
@@ -16,26 +17,67 @@
 	$('.key2').click(function(){
 		foo.push(bar);
 		bar = "0";
-		switch ($(this).val()) {
-			
-			case "+":
-				foo.push("+");
-				break;
+		console.log(foo);
 
-			case "-":
-				foo.push("-");
-				break;
+		if (typeof foo[foo.lenght] != "Number" ) {
+			switch ($('.key2').val()) {
+				
+				case "+":
+					foo.push("+");
+					break;
 
-			case "/":
-				foo.push("/");
-				break;
+				case "-":
+					foo.push("-");
+					break;
 
-			case "*":
-				foo.push("*");
-				break;
+				case "/":
+					foo.push("/");
+					break;
 
-			default :
-				break;
+				case "*":
+					foo.push("*");
+					break;
 
+				default :
+					break;
+
+			}
+		};
+
+
+	});
+
+	$('#result').click(function(){
+		for(var i = 0 ; i <= foo.length ; i++) {
+			if (typeof parseInt(foo[i]) != "NaN"){
+				return i++;
+			}
+			switch (foo[i]) {
+
+				case "+":
+					return result = parseInt(foo[i-1]) + parseInt(foo[i+1]);
+					foo.splice(i+2, 1, result);
+					break;
+
+				case "-":
+					return result = parseInt(foo[i-1]) + parseInt(foo[i+1]);
+					foo.splice(i+2, 1, result);
+					break;
+
+				case "/":
+					return result = parseInt(foo[i-1]) + parseInt(foo[i+1]);
+					foo.splice(i+2, 1, result);
+					break;
+
+				case "*":
+					return result = parseInt(foo[i-1]) + parseInt(foo[i+1]);
+					foo.splice(i+2, 1, result);
+					break; 
+			}
 		}
-	})
+	console.log(foo);
+
+	});
+});
+
+
