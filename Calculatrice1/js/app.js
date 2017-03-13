@@ -1,8 +1,8 @@
 $('document').ready(function(){
 
 	var bar ="0";
-	var foo=[];
-	var result="0";
+	var foo=["0"];
+	var result="";
 
 	//entrer la variable
 
@@ -18,64 +18,72 @@ $('document').ready(function(){
 		foo.push(bar);
 		bar = "0";
 		console.log(foo);
+		console.log(typeof parseInt(foo[foo.length]));
+		if (typeof parseInt(foo[foo.length]) === "number" ) {
+			
 
-		if (typeof foo[foo.lenght] != "Number" ) {
-			switch ($('.key2').val()) {
-				
-				case "+":
-					foo.push("+");
-					break;
+			
+			// mettre un opérateur dans le tableau que si le derniere élément est un nombreString
+			console.log($('.key2'.this).html());
+			foo.push($(this).html());
+			console.log($(this).html());
+		}
 
-				case "-":
-					foo.push("-");
-					break;
-
-				case "/":
-					foo.push("/");
-					break;
-
-				case "*":
-					foo.push("*");
-					break;
-
-				default :
-					break;
-
-			}
-		};
+		
 
 
 	});
 
 	$('#result').click(function(){
-		for(var i = 0 ; i <= foo.length ; i++) {
-			if (typeof parseInt(foo[i]) != "NaN"){
-				return i++;
+		foo.push(bar);
+
+		for(var i = 0 ; i <= foo.length; i++) {
+			if (typeof parseInt(foo[i+1]) != "undefined"){
+				
+				switch (foo[i]) {
+
+					/*a chaque tour de la boucle je mais la condition "opérateur"
+					je fais l'opération avec la valeur précédente et la suivante */
+
+					case "+":
+
+						result = parseInt(foo[i-1]) + parseInt(foo[i+1]);
+						foo.splice(i+1, 1, result);
+						console.log(result);
+						console.log(foo);
+						i++;
+						break;
+
+					case "-":
+						result = parseInt(foo[i-1]) - parseInt(foo[i+1]);
+						foo.splice(i+1, 1, result);
+						i++;
+						break;
+
+					case "/":
+						result = parseInt(foo[i-1]) / parseInt(foo[i+1]);
+						foo.splice(i+1, 1, result);
+						i++;
+						break;
+
+					case "*":
+						result = parseInt(foo[i-1]) * parseInt(foo[i+1]);
+						foo.splice(i+1, 1, result);
+						i++;
+						break; 
+
+					default:
+						i++;
+						break;
+				}
+			} else {
+				console.log(result);
 			}
-			switch (foo[i]) {
+			
 
-				case "+":
-					return result = parseInt(foo[i-1]) + parseInt(foo[i+1]);
-					foo.splice(i+2, 1, result);
-					break;
-
-				case "-":
-					return result = parseInt(foo[i-1]) + parseInt(foo[i+1]);
-					foo.splice(i+2, 1, result);
-					break;
-
-				case "/":
-					return result = parseInt(foo[i-1]) + parseInt(foo[i+1]);
-					foo.splice(i+2, 1, result);
-					break;
-
-				case "*":
-					return result = parseInt(foo[i-1]) + parseInt(foo[i+1]);
-					foo.splice(i+2, 1, result);
-					break; 
-			}
+			
 		}
-	console.log(foo);
+	
 
 	});
 });
